@@ -1,0 +1,139 @@
+/* Global Variables */
+:root {
+  --primary-color: #ea4343;
+  --secondary-color: #f9f9f9;
+  --tertiary-color: #333;
+  --quaternary-color: #666;
+  --border-radius: 0.25rem;
+  --transition: all 0.3s linear;
+}
+/* Reset Elements */
+* {
+  --webkit-box-sizing: border-box;
+  --mos-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Container */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* Home Page */
+
+.home {
+  background: var(--tertiary-color);
+}
+
+.home .container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  color: #fff;
+  position: relative;
+}
+
+.home .container .header .logo::first-letter {
+  color: var(--primary-color);
+  font-size: 45px;
+}
+
+.home .container .header .links {
+  display: flex;
+  gap: 40px;
+}
+
+.home .container .header .links li a {
+  color: #fff;
+  font-weight: bold;
+}
+
+.home .container .header .links li a:hover,
+.home .container .header .links li a.active {
+  color: var(--primary-color);
+}
+
+.home .container .header .menu {
+  display: none;
+  width: 30px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.home .container .header .menu span {
+  display: block;
+  height: 4px;
+  background: #fff;
+  border-radius: var(--border-radius);
+  margin-bottom: 5px;
+  margin-left: auto;
+}
+
+.home .container .header .menu span:nth-of-type(2) {
+  width: 85%;
+}
+.home .container .header .menu span:last-of-type {
+  width: 70%;
+}
+
+.home .container .header .menu:hover span {
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .home .container .header .links {
+    position: absolute;
+    top: -500px;
+    right: 0;
+    padding: 20px;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+    background: var(--tertiary-color);
+    border-top: 3px solid var(--primary-color);
+    transition: var(--transition);
+  }
+
+  .home .container .header .menu {
+    display: block;
+  }
+}
